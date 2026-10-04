@@ -1,0 +1,10 @@
+[OK] login_view
+[OK] register_view
+[OK] home_view
+[OK] detail_view
+[OK] booking_view
+[OK] my_bookings_view
+[OK] host_panel_view
+[OK] admin_view
+
+8/8 pantallas construidas correctamente

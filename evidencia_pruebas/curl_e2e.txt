@@ -1,0 +1,180 @@
+=== Evidencia funcional end-to-end (curl) - StayDragon API ===
+Fecha de ejecucion: Sat Oct  3 23:20:37 UTC 2026
+
+## Health check
+{
+  "app": "StayDragon API",
+  "status": "ok"
+}
+
+
+## Login turista
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc5MTA2OTYzNywianRpIjoiMjg0MTE1ZmMtOTZkNC00YTgyLThjN2UtZjk2NTUxN2JlYWNjIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjMiLCJuYmYiOjE3OTEwNjk2MzcsImNzcmYiOiI5MTJlODhlZC1hZjM5LTRkOTEtOGFhNC1hMmVmY2FhNjAyNjciLCJleHAiOjE3OTEwOTg0MzcsInJvbGUiOiJ0dXJpc3RhIiwibmFtZSI6Ikp1YW4gUFx1MDBlOXJleiJ9.1Ku4N-mKNmIhN1w4HbeDP4eWGSJ016m8qhQbG2i5T9Q",
+  "user": {
+    "created_at": "2026-10-03T23:20:35.054616",
+    "email": "juan@staydragon.co",
+    "id": 3,
+    "name": "Juan P\u00e9rez",
+    "role": "turista"
+  }
+}
+
+## Login anfitrion
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc5MTA2OTYzNywianRpIjoiMDk5OGY5ZjktYWQxNy00NWE3LTllZTQtZmNjNWIwOTU4NzMwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjIiLCJuYmYiOjE3OTEwNjk2MzcsImNzcmYiOiI5ZTQyY2E5Ni01ODE4LTQ0NTAtYjU3YS0xOWQ5ZTk1MWYxNDUiLCJleHAiOjE3OTEwOTg0MzcsInJvbGUiOiJhbmZpdHJpb24iLCJuYW1lIjoiTWFyXHUwMGVkYSBHXHUwMGYzbWV6In0.3VuIvPKqA_4a8D39SuQ3FOwDP0BFMbSwrtQx6Eu6HGE",
+  "user": {
+    "created_at": "2026-10-03T23:20:35.054615",
+    "email": "maria@staydragon.co",
+    "id": 2,
+    "name": "Mar\u00eda G\u00f3mez",
+    "role": "anfitrion"
+  }
+}
+
+## Login admin
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc5MTA2OTYzNywianRpIjoiZGMyYmE5NDEtZTQ3Zi00Yzk1LWFjMzQtMzMxNDEyZmQzYmU0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3OTEwNjk2MzcsImNzcmYiOiIxMTJmODI1Zi05MWI5LTQ4YmUtYTk2Yi01ZWI2ODhhZDk4YjIiLCJleHAiOjE3OTEwOTg0MzcsInJvbGUiOiJhZG1pbmlzdHJhZG9yIiwibmFtZSI6IkFkbWluIFN0YXlEcmFnb24ifQ.fj9ENCQlgGhjv0KDVuJmEgpON0BCglJQxe1xBTSfB70",
+  "user": {
+    "created_at": "2026-10-03T23:20:35.054609",
+    "email": "admin@staydragon.co",
+    "id": 1,
+    "name": "Admin StayDragon",
+    "role": "administrador"
+  }
+}
+
+## RF-04 Busqueda con filtro de ciudad
+[
+  {
+    "average_rating": 5.0,
+    "category": "alojamiento",
+    "city": "Rionegro",
+    "country": "Colombia",
+    "description": "Caba\u00f1a rodeada de naturaleza, ideal para desconectarse y disfrutar de actividades de ecoturismo.",
+    "host_id": 2,
+    "host_name": "Mar\u00eda G\u00f3mez",
+    "id": 1,
+    "is_active": true,
+    "latitude": 6.1537,
+    "longitude": -75.3738,
+    "price_per_night": 180000.0,
+    "review_count": 1,
+    "title": "Finca La Esperanza"
+  }
+]
+
+
+## RF-05 Detalle de publicacion
+{
+  "average_rating": 5.0,
+  "blocked_dates": [],
+  "category": "alojamiento",
+  "city": "Rionegro",
+  "country": "Colombia",
+  "description": "Caba\u00f1a rodeada de naturaleza, ideal para desconectarse y disfrutar de actividades de ecoturismo.",
+  "host_id": 2,
+  "host_name": "Mar\u00eda G\u00f3mez",
+  "id": 1,
+  "is_active": true,
+  "latitude": 6.1537,
+  "longitude": -75.3738,
+  "price_per_night": 180000.0,
+  "review_count": 1,
+  "reviews": [
+    {
+      "author": "Juan P\u00e9rez",
+      "comment": "Excelente experiencia, muy recomendado.",
+      "rating": 5
+    }
+  ],
+  "title": "Finca La Esperanza"
+}
+
+
+## RF-03 Crear publicacion (anfitrion)
+{
+  "average_rating": null,
+  "category": "alojamiento",
+  "city": "San Luis",
+  "country": "Colombia",
+  "description": "",
+  "host_id": 2,
+  "id": 3,
+  "is_active": true,
+  "latitude": null,
+  "longitude": null,
+  "price_per_night": 220000.0,
+  "review_count": 0,
+  "title": "Glamping Rio Claro"
+}
+
+
+## RF-06 / RF-08 Reserva + pago simulado (turista)
+{
+  "check_in": "2026-11-01",
+  "check_out": "2026-11-03",
+  "guests": 2,
+  "id": 2,
+  "listing_id": 2,
+  "nights": 2,
+  "payment": {
+    "amount": 130000.0,
+    "booking_id": 2,
+    "id": 2,
+    "method": "pse",
+    "status": "aprobado",
+    "transaction_id": "TXN-ZZWGEU80UB"
+  },
+  "status": "confirmada",
+  "total_price": 130000.0,
+  "tourist_id": 3
+}
+
+
+## Validacion: reserva con fechas superpuestas -> debe fallar con 409
+{
+  "error": "el alojamiento no est\u00e1 disponible en esas fechas"
+}
+
+HTTP_STATUS:409
+
+
+## RF-07 Bloquear fecha (anfitrion)
+{
+  "date": "2026-12-25",
+  "id": 1,
+  "listing_id": 1,
+  "reason": "mantenimiento"
+}
+
+
+## RF-09 Resena (turista con reserva confirmada)
+{
+  "comment": "Volveria sin duda",
+  "created_at": "2026-10-03T23:20:37.680006",
+  "id": 2,
+  "listing_id": 1,
+  "rating": 5,
+  "tourist_id": 3
+}
+
+
+## RF-13 Panel admin - estadisticas
+{
+  "reservas_confirmadas": 2,
+  "total_anfitriones": 1,
+  "total_publicaciones": 3,
+  "total_reservas": 2,
+  "total_turistas": 1,
+  "total_usuarios": 3
+}
+
+
+## Seguridad: turista NO puede acceder a panel admin -> debe fallar con 403
+{
+  "error": "solo un administrador puede ver esta informaci\u00f3n"
+}
+
+HTTP_STATUS:403
+

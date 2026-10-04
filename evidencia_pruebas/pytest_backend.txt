@@ -1,0 +1,44 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/claude/staydragon/backend
+plugins: anyio-4.15.1
+collecting ... collected 17 items
+
+tests/test_api.py::test_register_creates_user_and_returns_token PASSED   [  5%]
+tests/test_api.py::test_register_duplicate_email_fails PASSED            [ 11%]
+tests/test_api.py::test_login_wrong_password_fails PASSED                [ 17%]
+tests/test_api.py::test_tourist_cannot_create_listing PASSED             [ 23%]
+tests/test_api.py::test_host_can_create_listing PASSED                   [ 29%]
+tests/test_api.py::test_search_filters_by_city PASSED                    [ 35%]
+tests/test_api.py::test_listing_detail_includes_reviews_field PASSED     [ 41%]
+tests/test_api.py::test_create_booking_success_and_payment_approved PASSED [ 47%]
+tests/test_api.py::test_overlapping_booking_is_rejected PASSED           [ 52%]
+tests/test_api.py::test_host_can_block_date_and_booking_on_it_is_rejected PASSED [ 58%]
+tests/test_api.py::test_checkout_before_checkin_is_rejected PASSED       [ 64%]
+tests/test_api.py::test_review_requires_confirmed_booking PASSED         [ 70%]
+tests/test_api.py::test_review_allowed_after_confirmed_booking PASSED    [ 76%]
+tests/test_api.py::test_non_admin_cannot_access_admin_stats PASSED       [ 82%]
+tests/test_api.py::test_admin_can_access_stats PASSED                    [ 88%]
+tests/test_api.py::test_geo_search_returns_parsed_coordinates PASSED     [ 94%]
+tests/test_api.py::test_geo_search_requires_query_param PASSED           [100%]
+
+=============================== warnings summary ===============================
+tests/test_api.py: 39 warnings
+  /usr/local/lib/python3.12/dist-packages/sqlalchemy/sql/schema.py:4296: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    return util.wrap_callable(lambda ctx: fn(), fn)  # type: ignore[call-arg, no-any-return, no-untyped-call]  # noqa: E501
+
+tests/test_api.py: 15 warnings
+  /usr/local/lib/python3.12/dist-packages/jwt/api_jwt.py:149: InsecureKeyLengthWarning: The HMAC key is 25 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    return self._jws.encode(
+
+tests/test_api.py: 12 warnings
+  /usr/local/lib/python3.12/dist-packages/jwt/api_jwt.py:370: InsecureKeyLengthWarning: The HMAC key is 25 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+    decoded = self.decode_complete(
+
+tests/test_api.py: 10 warnings
+  /usr/local/lib/python3.12/dist-packages/flask_sqlalchemy/query.py:30: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    rv = self.get(ident)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================= 17 passed, 76 warnings in 3.89s ========================
